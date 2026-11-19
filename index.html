@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QRGenius - Create beautiful, customizable QR codes instantly. Free, fast, and privacy-first QR code generator.">
+    <meta name="keywords" content="QR code generator, QR generator, QRCode, custom QR, free QR">
+    <meta name="theme-color" content="#6366f1">
+    <title>QRGenius - Free QR Code Generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔳</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="#home" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zm-12 8h8v8H3v-8zm2 2v4h4v-4H5zm10-2h4v4h-4v-4zm2 2v2h2v-2h-2zm-2 4h2v2h-2v-2zm-2 0h2v4h-2v-4z"/></svg>
+                </span>
+                <span class="logo-text">QR<span class="accent">Genius</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#generator">Generator</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-ghost btn-small">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.24 3.35.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a11 11 0 0 1 5.76 0c2.19-1.49 3.15-1.18 3.15-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.35.77 1.04.77 2.1v3.11c0 .3.21.66.8.55A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <button class="menu-btn" id="menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-inner">
+                <span class="badge reveal">✨ 100% Free &amp; Open Source</span>
+                <h1 class="hero-title reveal">Create <span class="gradient-text">Beautiful QR Codes</span> in Seconds</h1>
+                <p class="hero-subtitle reveal">Generate stunning, fully customizable QR codes for links, WiFi, contacts &amp; more. No sign-up, no watermarks, no limits.</p>
+                <div class="hero-cta reveal">
+                    <a href="#generator" class="btn btn-primary btn-lg">Generate Now
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                    </a>
+                    <a href="#features" class="btn btn-outline btn-lg">Explore Features</a>
+                </div>
+                <div class="hero-stats reveal">
+                    <div class="hero-stat">
+                        <span class="stat-value" data-count="8">0</span>
+                        <span class="stat-label">Content Types</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-value" data-count="100">0</span>
+                        <span class="stat-label">% Free Forever</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-value" data-count="1024">0</span>
+                        <span class="stat-label">Max Resolution</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="generator" id="generator">
+            <div class="section-head reveal">
+                <h2>QR Code Generator</h2>
+                <p>Fill in the details and watch your QR code come to life</p>
+            </div>
+
+            <div class="generator-grid">
+                <div class="card form-card reveal">
+                    <div class="field">
+                        <label for="qr-type">Content Type</label>
+                        <div class="select-wrap">
+                            <select id="qr-type">
+                                <option value="text">📝 Plain Text</option>
+                                <option value="url">🔗 Website URL</option>
+                                <option value="email">✉️ Email Address</option>
+                                <option value="phone">📞 Phone Number</option>
+                                <option value="sms">💬 SMS Message</option>
+                                <option value="wifi">📶 WiFi Network</option>
+                                <option value="vcard">👤 Contact (vCard)</option>
+                                <option value="location">📍 Location</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-groups">
+                        <div class="field input-group" id="text-input-group">
+                            <label for="qr-content">Content</label>
+                            <textarea id="qr-content" rows="4" placeholder="Type your text here... e.g. Visit our website at QRGenius.com"></textarea>
+                            <div class="char-count"><span id="char-count">0</span> characters</div>
+                        </div>
+
+                        <div class="field input-group" id="url-input-group" style="display:none">
+                            <label for="qr-url">Website URL</label>
+                            <input type="url" id="qr-url" placeholder="https://example.com">
+                        </div>
+
+                        <div class="field input-group" id="email-input-group" style="display:none">
+                            <label for="qr-email">Email Address</label>
+                            <input type="email" id="qr-email" placeholder="user@example.com">
+                            <label for="qr-email-subject">Subject <span class="optional">(optional)</span></label>
+                            <input type="text" id="qr-email-subject" placeholder="Subject line">
+                            <label for="qr-email-body">Message <span class="optional">(optional)</span></label>
+                            <textarea id="qr-email-body" rows="3" placeholder="Email body"></textarea>
+                        </div>
+
+                        <div class="field input-group" id="phone-input-group" style="display:none">
+                            <label for="qr-phone">Phone Number</label>
+                            <input type="tel" id="qr-phone" placeholder="+1 (555) 123-4567">
+                        </div>
+
+                        <div class="field input-group" id="sms-input-group" style="display:none">
+                            <label for="qr-sms-phone">Phone Number</label>
+                            <input type="tel" id="qr-sms-phone" placeholder="+1 (555) 123-4567">
+                            <label for="qr-sms-body">Message</label>
+                            <textarea id="qr-sms-body" rows="3" placeholder="SMS content"></textarea>
+                        </div>
+
+                        <div class="field input-group" id="wifi-input-group" style="display:none">
+                            <label for="qr-wifi-ssid">Network Name (SSID)</label>
+                            <input type="text" id="qr-wifi-ssid" placeholder="MyWiFi">
+                            <label for="qr-wifi-password">Password</label>
+                            <input type="text" id="qr-wifi-password" placeholder="password123">
+                            <label for="qr-wifi-encryption">Encryption</label>
+                            <div class="select-wrap">
+                                <select id="qr-wifi-encryption">
+                                    <option value="WPA">WPA/WPA2</option>
+                                    <option value="WEP">WEP</option>
+                                    <option value="nopass">No Password</option>
+                                </select>
+                            </div>
+                            <label class="checkbox"><input type="checkbox" id="qr-wifi-hidden"> Hidden Network</label>
+                        </div>
+
+                        <div class="field input-group" id="vcard-input-group" style="display:none">
+                            <label for="qr-vcard-name">Full Name</label>
+                            <input type="text" id="qr-vcard-name" placeholder="John Doe">
+                            <label for="qr-vcard-phone">Phone</label>
+                            <input type="tel" id="qr-vcard-phone" placeholder="+1 (555) 123-4567">
+                            <label for="qr-vcard-email">Email</label>
+                            <input type="email" id="qr-vcard-email" placeholder="john@example.com">
+                            <label for="qr-vcard-org">Organization</label>
+                            <input type="text" id="qr-vcard-org" placeholder="Company Inc.">
+                            <label for="qr-vcard-title">Title</label>
+                            <input type="text" id="qr-vcard-title" placeholder="Software Engineer">
+                            <label for="qr-vcard-url">Website</label>
+                            <input type="url" id="qr-vcard-url" placeholder="https://example.com">
+                            <label for="qr-vcard-address">Address</label>
+                            <textarea id="qr-vcard-address" rows="2" placeholder="123 Main St, City, State"></textarea>
+                        </div>
+
+                        <div class="field input-group" id="location-input-group" style="display:none">
+                            <label for="qr-location-lat">Latitude</label>
+                            <input type="number" id="qr-location-lat" placeholder="40.7128" step="0.000001">
+                            <label for="qr-location-lng">Longitude</label>
+                            <input type="number" id="qr-location-lng" placeholder="-74.0060" step="0.000001">
+                            <label for="qr-location-label">Label <span class="optional">(optional)</span></label>
+                            <input type="text" id="qr-location-label" placeholder="New York, NY">
+                        </div>
+                    </div>
+
+                    <div class="customize">
+                        <h3>Customize</h3>
+                        <div class="customize-grid">
+                            <div class="field">
+                                <label for="qr-size">Size</label>
+                                <input type="range" id="qr-size" min="128" max="1024" step="64" value="256">
+                                <div class="range-labels">
+                                    <span>128</span>
+                                    <span id="size-value">256</span>
+                                    <span>1024</span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="qr-ecc">Error Correction</label>
+                                <div class="select-wrap">
+                                    <select id="qr-ecc">
+                                        <option value="L">Low (7%)</option>
+                                        <option value="M" selected>Medium (15%)</option>
+                                        <option value="Q">Quartile (25%)</option>
+                                        <option value="H">High (30%)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="qr-color-dark">Foreground Color</label>
+                                <div class="color-input">
+                                    <input type="color" id="qr-color-dark" value="#1e1b4b">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="qr-color-light">Background Color</label>
+                                <div class="color-input">
+                                    <input type="color" id="qr-color-light" value="#ffffff">
+                                </div>
+                            </div>
+                            <div class="field field-full">
+                                <label for="qr-logo">Center Logo <span class="optional">(optional)</span></label>
+                                <div class="logo-upload">
+                                    <input type="file" id="qr-logo" accept="image/*" hidden>
+                                    <button type="button" class="logo-btn" id="logo-btn">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                                        <span id="logo-btn-text">Upload Logo</span>
+                                    </button>
+                                    <button type="button" class="logo-remove" id="logo-remove" style="display:none">✕ Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block btn-generate" id="generate-btn">
+                        <span class="btn-label">Generate QR Code</span>
+                        <span class="spinner"></span>
+                    </button>
+                </div>
+
+                <div class="card preview-card reveal">
+                    <h3 class="preview-title">Your QR Code</h3>
+                    <div class="qr-stage">
+                        <div class="qr-frame" id="qr-frame">
+                            <div class="qr-wrap" id="qr-code"></div>
+                            <div class="placeholder" id="qr-placeholder">
+                                <div class="placeholder-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14h1v1h-1zM14 20h1v1h-1zM17 17h3v3h-3z"/></svg>
+                                </div>
+                                <p>Your QR code appears here</p>
+                                <span>Fill the form and hit Generate</span>
+                            </div>
+                            <div class="scan-line" id="scan-line"></div>
+                        </div>
+                    </div>
+                    <div class="preview-meta" id="preview-meta" style="display:none">
+                        <span class="meta-dot"></span> QR code ready to scan
+                    </div>
+                    <div class="preview-actions">
+                        <button class="btn btn-primary btn-sm" id="download-btn" disabled>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                            Download PNG
+                        </button>
+                        <button class="btn btn-outline btn-sm" id="copy-btn" disabled>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            Copy Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="section-head reveal">
+                <h2>Why Choose QRGenius?</h2>
+                <p>Everything you need to create professional QR codes</p>
+            </div>
+            <div class="features-grid">
+                <div class="card feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h4v4M20 20h-4m-8-16H4v4m0 12v-4"/><path d="M12 8h4v4h-4zM8 12h4v4H8zM16 12h4v4h-4zM12 16h4v4h-4zM8 8h4v4H8z"/></svg>
+                    </div>
+                    <h3>8 Content Types</h3>
+                    <p>Text, URLs, emails, phone numbers, SMS, WiFi, vCards, and locations — all in one tool.</p>
+                </div>
+                <div class="card feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2C7 2 2.5 6.5 2.5 11.5c0 5 3.5 8.5 5 10.5 1 1.3 2 .9 2.5 0 1-2 1-6-1-7.5-.5-.5-1-1-.5-1.5s1.5.5 2 1 1.5 1.5 3 .5 1-2.5.5-4"/></svg>
+                    </div>
+                    <h3>Custom Colors &amp; Logos</h3>
+                    <p>Brand your QR codes with any color combination and add your logo to the center.</p>
+                </div>
+                <div class="card feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h3>Instant Download</h3>
+                    <p>Download high-resolution PNGs up to 1024×1024 pixels, perfect for print or web.</p>
+                </div>
+                <div class="card feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>100% Private</h3>
+                    <p>Everything happens in your browser. Your data is never uploaded to any server.</p>
+                </div>
+                <div class="card feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <h3>Ultra Fast</h3>
+                    <p>QR codes generate instantly as you type. No waiting, no reloads, no friction.</p>
+                </div>
+                <div class="card feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7.5L12 17l-6.5 3.5L7.5 13 2 9h7l3-7z"/></svg>
+                    </div>
+                    <h3>Free Forever</h3>
+                    <p>No sign-ups, no watermarks, no download limits. Use it as much as you want.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how" id="how-it-works">
+            <div class="section-head reveal">
+                <h2>How It Works</h2>
+                <p>Three simple steps to your perfect QR code</p>
+            </div>
+            <div class="steps">
+                <div class="step reveal">
+                    <div class="step-number">1</div>
+                    <h3>Choose Content</h3>
+                    <p>Select a content type and enter your text, link, WiFi details, or contact info.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-number">2</div>
+                    <h3>Customize Style</h3>
+                    <p>Pick your size, colors, error correction level, and even add your logo.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-number">3</div>
+                    <h3>Download &amp; Share</h3>
+                    <p>Generate, download as PNG, or copy to clipboard. It's that simple!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <a href="#home" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zm-12 8h8v8H3v-8zm2 2v4h4v-4H5zm10-2h4v4h-4v-4zm2 2v2h2v-2h-2zm-2 4h2v2h-2v-2zm-2 0h2v4h-2v-4z"/></svg>
+                </span>
+                <span class="logo-text">QR<span class="accent">Genius</span></span>
+            </a>
+            <p class="footer-tag">Create beautiful QR codes — free, fast, and private.</p>
+            <div class="footer-links">
+                <a href="#generator">Generator</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+            </div>
+            <p class="footer-copy">© <span id="year"></span> QRGenius. Built with ❤️. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#generator">Generator</a>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+    </div>
+
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
